@@ -1,5 +1,5 @@
 # FedREVAN
-Real-time Detection of Vulnerable Android Source Code through Federated Neural Network with XAI
+## Real-time Detection of Vulnerable Android Source Code through Federated Neural Network with XAI
 
 Android applications are rapidly published and updated due to continuous and increasing user demands, and rapidly changing user needs. 
 Due to the rushed development cycles, you may focus more on the applications' functionalities than the security and source code vulnerabilities. 

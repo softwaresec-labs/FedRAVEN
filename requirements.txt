@@ -1,0 +1,11 @@
+pandas
+scikit-learn
+tensorflow==2.11.0
+seaborn
+matplotlib
+keras
+numpy
+Flask
+lime
+xgboost
+flwr

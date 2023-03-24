@@ -1,14 +1,13 @@
 # FedREVAN
 ## Real-time Detection of Vulnerable Android Source Code through Federated Neural Network with XAI
 
-Android applications are rapidly published and updated due to continuous and increasing user demands, and rapidly changing user needs. 
-Due to the rushed development cycles, you may focus more on the applications' functionalities than the security and source code vulnerabilities. 
-This may due to the lack of automated mechanisms to assist app developers in mitigating the vulnerabilities. 
+The speedy release and update of Android applications are driven by constantly evolving user demands and changing needs. 
+As a result of the fast-paced development cycles, developers may prioritize the functionality of the apps over their security and the possibility of source code vulnerabilities. 
+This can be attributed to the lack of automated tools that can assist developers in identifying and addressing such vulnerabilities. 
 
-FedREVAN plugin can be integrated with the Android Studio to support you for real-time source code vulnerability mitigation. 
-The plugin can provide the vulnerability status of a given source code line, which you are currently working on. 
-A well-trained, highly accurate and efficient federated artificial neural network model runs in the backend of FedREVAN. It can detect source code vulnerabilities, and their CWE categories with 95% accuracy. 
-Explainable AI techniques are also employed to provide the source code vulnerability prediction probabilities of each word. 
+FedREVAN is a plugin that can be integrated with Android Studio to aid developers in mitigating source code vulnerabilities in real-time. The plugin displays the vulnerability status of the source code line being worked on, using thevhighly accurate and efficient federated artificial neural network model that runs in the background. 
+The model has a 96% accuracy rate in detecting source code vulnerabilities and a 95% accuracy rate in identifying their CWE categories. 
+Furthermore, Explainable AI techniques are utilized to provide the likelihood of each word being a predictor of source code vulnerabilities.
 
 
 ![FedREVAN_Plugin_Vul_Code_Presents](https://user-images.githubusercontent.com/102326773/188329694-73ad7acc-2392-409a-ac11-6f40138bdf21.png)

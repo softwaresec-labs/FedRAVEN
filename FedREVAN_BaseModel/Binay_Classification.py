@@ -1,15 +1,14 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, classification_report,confusion_matrix
+from sklearn.metrics import classification_report,confusion_matrix,f1_score,accuracy_score
 from sklearn.feature_extraction.text import CountVectorizer
 import pickle
 import math
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras.models import Sequential
+from keras.layers import Dense
 import tensorflow as tf
-from sklearn.metrics import accuracy_score, f1_score
 
-vulnerability_df = pd.read_pickle("D:\\PhD\\Model_Building\\Stage_6_ML_Model_Training\\Version_3.0\\proccessed_dataset_for_analysis.pickle")
+vulnerability_df = pd.read_pickle("proccessed_dataset_for_analysis.pickle")
 
 vulnerability_df.Vulnerability_status.value_counts()
 

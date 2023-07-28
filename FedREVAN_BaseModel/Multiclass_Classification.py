@@ -1,21 +1,18 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, classification_report,confusion_matrix
+from sklearn.metrics import accuracy_score, classification_report,confusion_matrix,f1_score
 from sklearn.feature_extraction.text import CountVectorizer
 import pickle
-import math
-import imblearn
 import matplotlib.pyplot as plt
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras.models import Sequential
+from keras.layers import Dense
 from sklearn.preprocessing import LabelEncoder
 import tensorflow as tf
-from tensorflow.keras.utils import to_categorical
+from keras.utils import to_categorical
 import numpy as np
-from sklearn.metrics import accuracy_score,precision_score, recall_score, f1_score
 import seaborn as sn
 
-vulnerability_df = pd.read_pickle("D:\\PhD\\Model_Building\\Stage_6_ML_Model_Training\\Version_3.0\\proccessed_dataset_for_analysis.pickle")
+vulnerability_df = pd.read_pickle("proccessed_dataset_for_analysis.pickle")
 
 vulnerability_df = vulnerability_df.loc[vulnerability_df['Vulnerability_status'] == 1]
 vulnerability_df = vulnerability_df[['processed_code','CWE_ID']]

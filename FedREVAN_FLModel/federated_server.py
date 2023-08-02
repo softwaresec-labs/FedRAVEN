@@ -23,9 +23,17 @@ strategy = SaveModelStrategy()
 
 # Start Flower server for three rounds of federated learning
 fl.server.start_server(
-        server_address = '192.168.145.94:44466' ,
-        config={"num_rounds":50} ,
+        server_address = '0.0.0.0:8080',
+        config=fl.server.ServerConfig(num_rounds=5),
         grpc_max_message_length = 1024*1024*1024,
         strategy = strategy,
-
 )
+
+# strategy = fl.server.strategy.FedAvg()
+#
+# fl.server.start_server(
+#     server_address = '0.0.0.0:44466',
+#     config=fl.server.ServerConfig(num_rounds=3),
+#     strategy=strategy,
+#
+# )

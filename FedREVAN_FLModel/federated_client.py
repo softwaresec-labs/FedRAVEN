@@ -4,10 +4,13 @@ from sklearn.metrics import accuracy_score, classification_report,confusion_matr
 from sklearn.feature_extraction.text import CountVectorizer
 import pickle
 import math
+import flwr as fl
+import tensorflow as tf
 
-vulnerability_df = pd.read_pickle("LVDAndro_APKs_Combined_Processed_V3.pickle")
+vulnerability_df = pd.read_pickle("proccessed_dataset_for_analysis.pickle")
 
-vulnerability_df = vulnerability_df[:int(len(vulnerability_df.index)*3/4)]
+vulnerability_df = vulnerability_df[:int(len(vulnerability_df.index)*1/4)]
+# vulnerability_df = vulnerability_df[int(len(vulnerability_df.index)*1/4):int(len(vulnerability_df.index)*2/4)]
 
 vulnerability_df.Vulnerability_status.value_counts()
 
@@ -49,7 +52,7 @@ X_test  = vectorizer.transform(sentences_test).toarray()
 
 print(X_train.shape)
 
-import tensorflow as tf
+
 
 model = tf.keras.models.Sequential()
 model.add(tf.keras.layers.Dense(20, input_shape=(X_train.shape[1],), activation='relu'))
@@ -57,11 +60,12 @@ model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-import flwr as fl
+
 
 
 class federated_client(fl.client.NumPyClient):
-    def get_parameters(self):
+    # def get_parameters(self):
+    def get_parameters(self,config):
         return model.get_weights()
 
     def fit(self, parameters, config):
@@ -75,5 +79,4 @@ class federated_client(fl.client.NumPyClient):
         return loss, len(X_test),{"accuracy":accuracy}
 
 
-fl.client.start_numpy_client(server_address="192.168.145.94", client=federated_client())
-
+fl.client.start_numpy_client(server_address="192.168.1.12:8080", client=federated_client())

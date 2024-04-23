@@ -17,3 +17,5 @@ Furthermore, Explainable AI techniques are utilized to provide the likelihood of
 
 ![XAI_Predictions_Vul](https://user-images.githubusercontent.com/102326773/188329708-83816d65-49b0-4cb5-ad21-a21653938757.png)
 
+
+If you are using this plugin or model in your research work, please cite as: **_Senanayake, J., Kalutarage, H., Petrovski, A., Al-Kadri, M.O., Piras, L. (2024). FedREVAN: Real-time DEtection of Vulnerable Android Source Code Through Federated Neural Network with XAI. In: Katsikas, S., et al. Computer Security. ESORICS 2023 International Workshops. ESORICS 2023. Lecture Notes in Computer Science, vol 14399. Springer, Cham. https://doi.org/10.1007/978-3-031-54129-2_25_**
